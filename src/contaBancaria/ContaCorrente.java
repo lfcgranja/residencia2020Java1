@@ -8,10 +8,6 @@ public class ContaCorrente extends Conta {
 	public ContaCorrente() {
 	}
 
-	public ContaCorrente(String titular, int numero) {
-		super(titular, numero);
-	}
-
 	public ContaCorrente(String titular, int numero, double saldo) {
 		super(titular, numero, saldo);
 	}
@@ -36,6 +32,13 @@ public class ContaCorrente extends Conta {
 
 	public void setLimite(double limite) {
 		this.limite = limite;
+	}
+
+	@Override
+	public String toString() {
+		return "\n*ContaCorrente\ntarifa: " + tarifa + "\nlimite: " + limite + "\ngetNumero(): " + getNumero()
+				+ "\ngetSaldo(): " + getSaldo() + "\ngetNumeroContas(): " + getNumeroContas() + "\ngetTitular(): "
+				+ getTitular();
 	}
 
 }

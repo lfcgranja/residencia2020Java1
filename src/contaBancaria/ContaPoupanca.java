@@ -7,10 +7,6 @@ public class ContaPoupanca extends Conta {
 	public ContaPoupanca() {
 	}
 
-	public ContaPoupanca(String titular, int numero) {
-		super(titular, numero);
-	}
-
 	public ContaPoupanca(String titular, int numero, double saldo) {
 		super(titular, numero, saldo);
 	}
@@ -26,6 +22,12 @@ public class ContaPoupanca extends Conta {
 
 	public void setRendimento(double rendimento) {
 		this.rendimento = rendimento;
+	}
+
+	@Override
+	public String toString() {
+		return "\n*ContaPoupanca\nrendimento: " + rendimento + "\ngetNumero(): " + getNumero() + "\ngetSaldo(): "
+				+ getSaldo() + "\ngetNumeroContas(): " + getNumeroContas() + "\ngetTitular(): " + getTitular();
 	}
 	
 }

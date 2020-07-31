@@ -8,10 +8,6 @@ public class ContaPoupancaEspecial extends ContaPoupanca {
 		super();
 	}
 
-	public ContaPoupancaEspecial(String titular, int numero) {
-		super(titular, numero);
-	}
-
 	public ContaPoupancaEspecial(String titular, int numero, double saldo) {
 		super(titular, numero, saldo);
 	}
@@ -31,6 +27,13 @@ public class ContaPoupancaEspecial extends ContaPoupanca {
 
 	public void setCartaoDebito(boolean cartaoDebito) {
 		this.cartaoDebito = cartaoDebito;
+	}
+
+	@Override
+	public String toString() {
+		return "\n*ContaPoupancaEspecial\ncartaoDebito: " + cartaoDebito + "\nrendimento: " + rendimento
+				+ "\ngetNumero(): " + getNumero() + "\ngetSaldo(): " + getSaldo() + "\ngetNumeroContas(): "
+				+ getNumeroContas() + "\ngetTitular(): " + getTitular();
 	}
 
 }

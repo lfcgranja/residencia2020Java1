@@ -8,10 +8,6 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 	public ContaCorrenteEspecial() {
 	}
 
-	public ContaCorrenteEspecial(String titular, int numero) {
-		super(titular, numero);
-	}
-
 	public ContaCorrenteEspecial(String titular, int numero, double saldo) {
 		super(titular, numero, saldo);
 	}
@@ -40,5 +36,12 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 
 	public void setInvetimento(boolean invetimento) {
 		this.invetimento = invetimento;
+	}
+
+	@Override
+	public String toString() {
+		return "\n*ContaCorrenteEspecial\ncartaoDeCredito: " + cartaoDeCredito + "\ninvetimento: " + invetimento
+				+ "\ntarifa: " + tarifa + "\nlimite: " + limite + "\ngetNumero(): " + getNumero() + "\ngetSaldo(): "
+				+ getSaldo() + "\ngetNumeroContas(): " + getNumeroContas() + "\ngetTitular(): " + getTitular();
 	}
 }

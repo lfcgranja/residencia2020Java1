@@ -11,33 +11,13 @@ public class Conta {
 	// Construtores
 	public Conta() {
 		Conta.numeroContas++;
-		System.out.println("\nConta aberta pelo construtor default");
-		System.out.println("Numero: " + this.numero);
-		System.out.println("Titular: " + this.titular);
-		System.out.println("Saldo: " + this.saldo);
 	}
 
-	public Conta(String titular, int numero) {
-		
-		this.titular = titular;
-		this.numero = numero;
-		System.out.println("\nConta aberta pelo contrutor com 3 parametro");
-		System.out.println("Numero: " + this.numero);
-		System.out.println("Titular: " + this.titular);
-		System.out.println("Saldo: " + this.saldo);
-	}
-	
 	public Conta(String titular, int numero, double saldo) {
-		
+		Conta.numeroContas++;
 		this.titular = titular;
 		this.numero = numero;
 		this.saldo = saldo;
-		
-		
-		System.out.println("\nConta aberta pelo contrutor com 3 parametro");
-		System.out.println("Numero: " + this.numero);
-		System.out.println("Titular: " + this.titular);
-		System.out.println("Saldo: " + this.saldo);
 	}
 
 	//Metodos
@@ -98,4 +78,11 @@ public class Conta {
 	public void setTitular(String titular) {
 		this.titular = titular;
 	}
+
+	@Override
+	public String toString() {
+		return "\n*Conta\nnumero: " + numero + "\ntitular: " + titular + "\nsaldo: " + saldo;
+	}
+	
+	
 }
