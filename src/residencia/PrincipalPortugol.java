@@ -2,8 +2,7 @@ package residencia;
 
 import portugol.BalancoPatrimonial;
 
-public class Principal {
-	
+public class PrincipalPortugol {
 	
     public static void main(String[] args) {
     	
@@ -18,10 +17,6 @@ public class Principal {
     	balanco.calcularMediaGastosAnual();
     	
     	balanco.imprimirGastos();
-    	
-     	
     }
-    
-
 }
 
