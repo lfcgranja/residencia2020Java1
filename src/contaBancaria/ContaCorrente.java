@@ -6,6 +6,7 @@ public class ContaCorrente extends Conta {
 	protected double limite;
 	
 	public ContaCorrente() {
+		super();
 	}
 
 	public ContaCorrente(String titular, int numero, double saldo) {

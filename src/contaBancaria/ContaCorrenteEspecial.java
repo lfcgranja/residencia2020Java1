@@ -3,9 +3,10 @@ package contaBancaria;
 public class ContaCorrenteEspecial extends ContaCorrente {
 
 	private boolean cartaoDeCredito;
-	private boolean invetimento;
+	private boolean investimento;
 	
 	public ContaCorrenteEspecial() {
+		super();
 	}
 
 	public ContaCorrenteEspecial(String titular, int numero, double saldo) {
@@ -16,10 +17,10 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 		super(titular, numero, saldo, tarifa, limite);
 	}	
 
-	public ContaCorrenteEspecial(String titular, int numero, double saldo, double tarifa, double limite, boolean cartaoDeCredito, boolean invetimento) {
+	public ContaCorrenteEspecial(String titular, int numero, double saldo, double tarifa, double limite, boolean cartaoDeCredito, boolean investimento) {
 		super(titular, numero, saldo, tarifa, limite);
 		this.cartaoDeCredito = cartaoDeCredito;
-		this.invetimento = invetimento;
+		this.investimento = investimento;
 	}
 
 	public boolean isCartaoDeCredito() {
@@ -30,17 +31,17 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 		this.cartaoDeCredito = cartaoDeCredito;
 	}
 
-	public boolean isInvetimento() {
-		return invetimento;
+	public boolean isInvestimento() {
+		return investimento;
 	}
 
-	public void setInvetimento(boolean invetimento) {
-		this.invetimento = invetimento;
+	public void setInvestimento(boolean investimento) {
+		this.investimento = investimento;
 	}
 
 	@Override
 	public String toString() {
-		return "\n*ContaCorrenteEspecial\ncartaoDeCredito: " + cartaoDeCredito + "\ninvetimento: " + invetimento
+		return "\n*ContaCorrenteEspecial\ncartaoDeCredito: " + cartaoDeCredito + "\ninvetimento: " + investimento
 				+ "\ntarifa: " + tarifa + "\nlimite: " + limite + "\ngetNumero(): " + getNumero() + "\ngetSaldo(): "
 				+ getSaldo() + "\ngetNumeroContas(): " + getNumeroContas() + "\ngetTitular(): " + getTitular();
 	}

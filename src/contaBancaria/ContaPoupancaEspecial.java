@@ -31,9 +31,9 @@ public class ContaPoupancaEspecial extends ContaPoupanca {
 
 	@Override
 	public String toString() {
-		return "\n*ContaPoupancaEspecial\ncartaoDebito: " + cartaoDebito + "\nrendimento: " + rendimento
-				+ "\ngetNumero(): " + getNumero() + "\ngetSaldo(): " + getSaldo() + "\ngetNumeroContas(): "
-				+ getNumeroContas() + "\ngetTitular(): " + getTitular();
+		return "\n*ContaPoupancaEspecial\ncartaoDebito: " + cartaoDebito + "\nrendimento: " + rendimento + "\nnumero: "
+				+ numero + "\ntitular: " + titular + "\nsaldo: " + saldo;
 	}
+
 
 }

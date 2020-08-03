@@ -5,6 +5,7 @@ public class ContaPoupanca extends Conta {
 	protected double rendimento;
 
 	public ContaPoupanca() {
+		super();
 	}
 
 	public ContaPoupanca(String titular, int numero, double saldo) {

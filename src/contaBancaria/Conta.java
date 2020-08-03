@@ -1,12 +1,12 @@
 package contaBancaria;
 
 public class Conta {
-	private static int numeroContas = 0;
+	protected static int numeroContas = 0;
 
 	// Atributos
-	private int numero;
-	private String titular;
-	private double saldo;
+	protected int numero;
+	protected String titular;
+	protected double saldo;
 	
 	// Construtores
 	public Conta() {
