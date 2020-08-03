@@ -13,6 +13,10 @@ public class Funcionario {
 		this.cpf = cpf;
 		this.salario = salario;
 	}
+	
+	public double getBonificacao() {
+		return this.salario * 0.20;
+	}
 	/**
 	 * @return the nome
 	 */

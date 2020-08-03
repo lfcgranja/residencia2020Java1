@@ -19,6 +19,11 @@ public class Gerente extends Funcionario{
 		super();
 	}
 
+	@Override
+	public double getBonificacao() {
+		return (super.getBonificacao() * 0.10) + (this.salario * 0.15);
+	}
+
 	public int getSenha() {
 		return senha;
 	}
