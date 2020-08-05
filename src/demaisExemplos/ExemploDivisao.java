@@ -27,7 +27,7 @@ public class ExemploDivisao {
 	        continua = false;
 
 	      }catch (InputMismatchException erro1) {
-	        System.err.println("Não é permitido inserir letras, informe apenas números inteiros!");
+	        System.err.println("Não é permitido inserir letras ou numeros com casas decimais, informe apenas números inteiros!");
 	        sc.nextLine(); //descarta a entrada errada do usuário
 	      }catch(ArithmeticException erro2){
 	        System.err.println("O número do divisor deve ser diferente de 0!");

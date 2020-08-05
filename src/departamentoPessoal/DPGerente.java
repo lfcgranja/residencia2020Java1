@@ -8,11 +8,6 @@ public abstract class DPGerente extends DPFuncionario{
 		super();
 	}
 
-	public DPGerente(String nome, String cpf, double salario, int numFuncionarios) {
-		super(nome, cpf, salario);
-		this.numFuncionarios = numFuncionarios;
-	}
-
 	public int getNumFuncionarios() {
 		return numFuncionarios;
 	}

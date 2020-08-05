@@ -1,20 +1,39 @@
 package departamentoPessoal;
 
 public abstract class DPFuncionario {
-	protected String nome;
-	protected String cpf;
-	protected double salario;
+	private String nome;
+	private String cpf;
+	private double salario;
 	
 	public DPFuncionario() {}
 
-	public DPFuncionario(String nome, String cpf, double salario) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.salario = salario;
-	}
-	
 	public abstract double getPLR();
 	
 	public abstract String getBonificacao();
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	
 }

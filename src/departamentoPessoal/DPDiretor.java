@@ -2,16 +2,12 @@ package departamentoPessoal;
 
 public class DPDiretor extends DPGerente implements DPFuncionarioEspecial{
 
-	int setor;
+	private int setor;
 	
 	public DPDiretor() {
 		super();
 	}
 	
-	public DPDiretor(String nome, String cpf, double salario, int numFuncionarios) {
-		super(nome, cpf, salario, numFuncionarios);
-	}
-
 	public int getSetor() {
 		return setor;
 	}
@@ -22,12 +18,12 @@ public class DPDiretor extends DPGerente implements DPFuncionarioEspecial{
 
 	@Override
 	public double getPLR() {
-		return this.salario * 2;
+		return this.getSalario() * 2;
 	}
 
 	@Override
 	public String getBonificacao() {
-		return " Bonificação: "+ this.salario * 0.15;
+		return " Bonificação: "+ this.getSalario() * 0.15;
 	}
 
 	@Override
