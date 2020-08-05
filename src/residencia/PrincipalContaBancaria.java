@@ -1,14 +1,15 @@
 package residencia;
 
-import contaBancaria.ContaPoupancaEspecial;
-import pessoal.Gerente;
+import contaBancaria.ContaCorrente;
+import contaBancaria.ContaPoupanca;
+import contaBancaria.FolhaPagamento;
 
 public class PrincipalContaBancaria {
 
 	public static void main(String[] args) {
 
-		ContaPoupancaEspecial cpe = new ContaPoupancaEspecial("Marcelo", 123456, 20000, 200, true);
-		System.out.println(cpe.toString());
+		ContaPoupanca poupanca;
+		FolhaPagamento folha = new FolhaPagamento();
 	}
 
 }

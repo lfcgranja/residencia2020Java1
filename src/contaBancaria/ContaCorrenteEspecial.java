@@ -9,16 +9,8 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 		super();
 	}
 
-	public ContaCorrenteEspecial(String titular, int numero, double saldo) {
-		super(titular, numero, saldo);
-	}
-
-	public ContaCorrenteEspecial(String titular, int numero, double saldo, double tarifa, double limite) {
-		super(titular, numero, saldo, tarifa, limite);
-	}	
-
-	public ContaCorrenteEspecial(String titular, int numero, double saldo, double tarifa, double limite, boolean cartaoDeCredito, boolean investimento) {
-		super(titular, numero, saldo, tarifa, limite);
+	public ContaCorrenteEspecial(int numero, String titular, double saldo, double tarifa, double limite, boolean cartaoDeCredito, boolean investimento) {
+		super(numero, titular, saldo, tarifa, limite);
 		this.cartaoDeCredito = cartaoDeCredito;
 		this.investimento = investimento;
 	}
@@ -39,10 +31,4 @@ public class ContaCorrenteEspecial extends ContaCorrente {
 		this.investimento = investimento;
 	}
 
-	@Override
-	public String toString() {
-		return "\n*ContaCorrenteEspecial\ncartaoDeCredito: " + cartaoDeCredito + "\ninvetimento: " + investimento
-				+ "\ntarifa: " + tarifa + "\nlimite: " + limite + "\ngetNumero(): " + getNumero() + "\ngetSaldo(): "
-				+ getSaldo() + "\ngetNumeroContas(): " + getNumeroContas() + "\ngetTitular(): " + getTitular();
-	}
 }

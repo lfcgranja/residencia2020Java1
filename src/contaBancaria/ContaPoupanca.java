@@ -1,20 +1,78 @@
 package contaBancaria;
 
-public class ContaPoupanca extends Conta {
+public class ContaPoupanca implements Conta {
 
+	protected int numero;
+	protected String titular;
+	protected double saldo;
 	protected double rendimento;
 
-	public ContaPoupanca() {
+	public ContaPoupanca() {}
+	
+	public ContaPoupanca(int numero, String titular, double saldo, double rendimento) {
 		super();
+		this.numero = numero;
+		this.titular = titular;
+		this.saldo = saldo;
+		this.rendimento = rendimento;
 	}
 
-	public ContaPoupanca(String titular, int numero, double saldo) {
-		super(titular, numero, saldo);
+	@Override
+	public boolean sacar(double valor) {
+		if (this.saldo < valor) {
+			return false;
+		} 
+		else {
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			return true;
+		}
 	}
 	
-	public ContaPoupanca(String titular, int numero, double saldo, double rendimento) {
-		super(titular, numero, saldo);
-		this.rendimento = rendimento;
+	@Override
+	public boolean transfere(Conta destino, double valor) {
+		boolean retirou = this.sacar(valor);
+		if (retirou == false) {
+			return false;
+		}
+		else {
+			destino.depositar(valor);
+			return true;
+		}
+	}
+	
+	@Override
+	public void depositar(double valor) {
+		this.saldo = this.saldo + valor;
+	}
+	
+	@Override
+	public void depositarDeTransferencia(double valor) {
+		this.saldo = this.saldo + valor;
+	}
+	//getters e setters
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
 	}
 
 	public double getRendimento() {
@@ -23,12 +81,6 @@ public class ContaPoupanca extends Conta {
 
 	public void setRendimento(double rendimento) {
 		this.rendimento = rendimento;
-	}
-
-	@Override
-	public String toString() {
-		return "\n*ContaPoupanca\nrendimento: " + rendimento + "\ngetNumero(): " + getNumero() + "\ngetSaldo(): "
-				+ getSaldo() + "\ngetNumeroContas(): " + getNumeroContas() + "\ngetTitular(): " + getTitular();
 	}
 	
 }
