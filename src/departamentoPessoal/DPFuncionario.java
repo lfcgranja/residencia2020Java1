@@ -1,6 +1,8 @@
 package departamentoPessoal;
 
-public abstract class DPFuncionario {
+public abstract class DPFuncionario implements Comparable<DPFuncionario>{
+	
+	private static int compartilhado;
 	private String nome;
 	private String cpf;
 	private double salario;
@@ -33,6 +35,30 @@ public abstract class DPFuncionario {
 
 	public void setSalario(double salario) {
 		this.salario = salario;
+	}
+
+	public static int getCompartilhado() {
+		return compartilhado;
+	}
+
+	/**
+	 * @param compartilhado the compartilhado to set
+	 */
+	public static void setCompartilhado(int compartilhado) {
+		DPFuncionario.compartilhado = compartilhado;
+	}
+
+	@Override
+	public int compareTo(DPFuncionario f) {
+		return this.getNome().compareToIgnoreCase(f.getNome());
+		
+//		if(this.getSalario()<f.getSalario()) {
+//			return -1;
+//		}
+//		if(this.getSalario()>f.getSalario()) {
+//			return 1;
+//		}
+//		return 0;
 	}
 
 	

@@ -14,6 +14,7 @@ public class ExemploDivisao {
 	    boolean continua = true;
 
 	    do{
+	    	
 	      try{
 	        System.out.print("Numerador: ");
 	        int numerador = sc.nextInt();
@@ -28,12 +29,14 @@ public class ExemploDivisao {
 
 	      }catch (InputMismatchException erro1) {
 	        System.err.println("Não é permitido inserir letras ou numeros com casas decimais, informe apenas números inteiros!");
+	        erro1.printStackTrace();
 	        sc.nextLine(); //descarta a entrada errada do usuário
 	      }catch(ArithmeticException erro2){
 	        System.err.println("O número do divisor deve ser diferente de 0!");
 	      }finally{
 	        System.out.println("Execução do Finally!");
 	      }
+	      
 	    }while(continua);
 	  }
 	}

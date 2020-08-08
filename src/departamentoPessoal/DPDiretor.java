@@ -1,6 +1,6 @@
 package departamentoPessoal;
 
-public class DPDiretor extends DPGerente implements DPFuncionarioEspecial{
+public class DPDiretor extends DPGerente{
 
 	private int setor;
 	
@@ -8,6 +8,12 @@ public class DPDiretor extends DPGerente implements DPFuncionarioEspecial{
 		super();
 	}
 	
+	public DPDiretor(String string, String string2, double d) {
+		this.setNome(string);
+		this.setCpf(string);
+		this.setSalario(d);
+	}
+
 	public int getSetor() {
 		return setor;
 	}
@@ -27,12 +33,8 @@ public class DPDiretor extends DPGerente implements DPFuncionarioEspecial{
 	}
 
 	@Override
-	public boolean acessoEspecial(String senha) {
-		
-		if(senha.equalsIgnoreCase("123456") )
-			return true;
-		else
-			return false;
+	public String toString() {
+		return "\n*DPDiretor\nsetor: " + setor;
 	}
 	
 	

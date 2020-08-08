@@ -23,8 +23,8 @@ public class ContaPoupancaEspecial extends ContaPoupanca {
 
 	@Override
 	public String toString() {
-		return "\n*ContaPoupancaEspecial\ncartaoDebito: " + cartaoDebito + "\nrendimento: " + rendimento + "\nnumero: "
-				+ numero + "\ntitular: " + titular + "\nsaldo: " + saldo;
+		return "\n*ContaPoupancaEspecial\ncartaoDebito: " + cartaoDebito + "\nrendimento: " + this.getRendimento() + "\nnumero: "
+				+ this.getNumero() + "\ntitular: " + this.getTitular() + "\nsaldo: " + this.getSaldo();
 	}
 
 

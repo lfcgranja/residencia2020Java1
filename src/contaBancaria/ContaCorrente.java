@@ -3,11 +3,11 @@ package contaBancaria;
 public class ContaCorrente implements contaTributavel {
 
 	//Atributos
-	protected int numero;
-	protected String titular;
-	protected double saldo;
-	protected double tarifa;
-	protected double limite;
+	private int numero;
+	private String titular;
+	private double saldo;
+	private double tarifa;
+	private double limite;
 	static int numeroContas;
 	
 	//Construtores
@@ -95,5 +95,11 @@ public class ContaCorrente implements contaTributavel {
 	public void setLimite(double limite) {
 		this.limite = limite;
 	}
+	@Override
+	public String toString() {
+		return "\n*ContaCorrente\nnumero: " + numero + "\ntitular: " + titular + "\nsaldo: " + saldo + "\ntarifa: "
+				+ tarifa + "\nlimite: " + limite;
+	}
+	
 
 }

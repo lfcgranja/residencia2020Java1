@@ -1,20 +1,37 @@
 package departamentoPessoal;
 
-/*
-Implementar uma classe abstrata funcionario - OK
-Implementar uma interface fucionarioEspecial - OK
-Implementar uma classe gerente derivada de funcionario - OK
-Implementar uma classe diretor derivada de gerente - OK
-Experimentem usar abstract na classe gerente sem implementar os métodos abstratos da classe funcionario. - OK
-Experimentem implementar os metodos abstratos na classe gerente mesmo esta classe sendo abstrata - OK
-Adiciona a implementação da interface funcionarioEspecial na classe diretor. - OK
-*/
+import java.util.InputMismatchException;
+
+import myException.ContasException;
+import myException.DPException;
 
 public class DPPrincipal {
 
-	public static void main(String[] args){
-		
-			DPRelatorio dpr = new DPRelatorio();
+	public static void main(String[] args) throws Exception{
+		DPRelatorio dpr = new DPRelatorio();
+		try {
+
 			dpr.preparaFolha();
+		}
+		catch (NullPointerException e) {
+			System.out.println("NullPointerException: "+ e.getCause());
+			e.printStackTrace();
+		}
+		catch (InputMismatchException e) {
+			System.out.println("InputMismatchException: "+ e.getCause());
+			e.printStackTrace();
+		}
+		catch (ArithmeticException e) {
+			System.out.println("ArithmeticException: "+ e.getCause());
+			e.printStackTrace();
+		}
+		catch (ContasException e) {
+			//System.out.println("ContasException: "+ e.getCause());
+			//e.printStackTrace();
+		}
+		catch (DPException e) {
+			//System.out.println("DPException: "+ e.getCause());
+			//e.printStackTrace();
+		}
 	}
 }

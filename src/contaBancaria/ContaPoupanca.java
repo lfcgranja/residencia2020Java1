@@ -2,10 +2,10 @@ package contaBancaria;
 
 public class ContaPoupanca implements Conta {
 
-	protected int numero;
-	protected String titular;
-	protected double saldo;
-	protected double rendimento;
+	private int numero;
+	private String titular;
+	private double saldo;
+	private double rendimento;
 
 	public ContaPoupanca() {}
 	

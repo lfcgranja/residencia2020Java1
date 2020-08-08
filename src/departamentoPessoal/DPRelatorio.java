@@ -2,28 +2,27 @@ package departamentoPessoal;
 
 public class DPRelatorio {
 
-	public void preparaFolha() {
-		
+	public void preparaFolha(){
+	
+			DPDiretor diretor = new DPDiretor();
+			diretor.setNome("Maria Clara");
+			diretor.setCpf("987.654.321-90");
+			diretor.setSalario(4000.00);
+			diretor.setSetor(10);
+			diretor.setNumFuncionarios(10);
+			DPFuncionario.setCompartilhado(2);
 			
-		DPRelatorio dpr = new DPRelatorio();
-		DPFuncionario funcionario = null;
-		
-		DPDiretor diretor = new DPDiretor();
-		diretor.setNome("Marcelo");
-		diretor.setCpf("123.456.798.-10");
-		diretor.setSalario(2000.00);
-		funcionario = diretor;
-		System.out.println(dpr.calculaFolha(funcionario));
-		
-		funcionario = null;
-		diretor = null;
-		
-		diretor = new DPDiretor();
-		diretor.setNome("Maria Clara");
-		diretor.setCpf("987.654.321-90");
-		diretor.setSalario(4000.00);
-		int teste2 = (int)diretor.getSalario() / 1;
-		System.out.println(dpr.calculaFolha(funcionario));
+			DPDiretor diretor2 = new DPDiretor();
+			diretor2.setNome("Marcelo");
+			diretor2.setCpf("123.456.789-10");
+			diretor2.setSalario(2000.00);
+			diretor2.setSetor(5);
+			diretor2.setNumFuncionarios(5);
+			DPFuncionario.setCompartilhado(5);
+			
+			System.out.println(diretor.getNome());
+			System.out.println(diretor2.getNome());
+			System.out.println(DPFuncionario.getCompartilhado());
 
 	}
 	
