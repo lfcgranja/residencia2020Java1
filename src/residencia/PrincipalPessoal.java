@@ -8,9 +8,8 @@ import pessoal.Gerente;
 public class PrincipalPessoal {
 
 	public static void main(String[] args) {
-		Funcionario func = new Gerente("Marcelo", "123.456.789-10", 2000, 123456, 10);
+		Funcionario func = new Gerente("Marcelo", "12345678910", "GERENTE", "123456" , 2000.00, 10);
 		System.out.println(func.toString());
-		System.out.println("bonificacao: "+func.getBonificacao());
 		
 		FolhaPagamento folha = new FolhaPagamento();
 		

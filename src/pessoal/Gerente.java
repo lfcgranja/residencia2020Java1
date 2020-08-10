@@ -2,50 +2,29 @@ package pessoal;
 
 public class Gerente extends Funcionario{
 
-	protected int senha;
-	protected int numFuncionarios;
+	private int agencia;
+
+	public Gerente() {super();}
 	
-	public Gerente(String nome, String cpf, double salario) {
-		super(nome, cpf, salario);
-	}
-	
-	public Gerente(String nome, String cpf, double salario, int senha, int numFuncionarios) {
-		super(nome, cpf, salario);
-		this.senha = senha;
-		this.numFuncionarios = numFuncionarios;
+	public Gerente(String nome, String cpf, String tipo, String senha, double salario, int agencia) {
+		super(nome, cpf, tipo, senha, salario);
+		this.agencia = agencia;
 	}
 
-	public Gerente() {
-		super();
+	public int getAgencia() {
+		return agencia;
 	}
 
-	@Override
-	public double getBonificacao() {
-		return (super.getBonificacao() * 0.10) + (this.salario * 0.15);
-	}
-
-	public int getSenha() {
-		return senha;
-	}
-
-	public void setSenha(int senha) {
-		this.senha = senha;
-	}
-
-	public int getNumFuncionarios() {
-		return numFuncionarios;
-	}
-
-	public void setNumFuncionarios(int numFuncionarios) {
-		this.numFuncionarios = numFuncionarios;
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
 	}
 
 	@Override
 	public String toString() {
-		return "\n*Gerente\nsenha: " + senha + "\nnumFuncionarios: " + numFuncionarios + "\nnome: " + nome + "\ncpf: "
-				+ cpf + "\nsalario: " + salario;
+		return "\n*Gerente\nagencia: " + agencia + "\ngetNome(): " + getNome() + "\ngetCpf(): " + getCpf()
+				+ "\ngetTipo(): " + getTipo() + "\ngetSenha(): " + getSenha() + "\ngetSalario(): " + getSalario();
 	}
 
-
-
+	
+	
 }

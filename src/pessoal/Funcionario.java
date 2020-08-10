@@ -2,61 +2,63 @@ package pessoal;
 
 public class Funcionario {
 
-	protected String nome;
-	protected String cpf;
-	protected double salario;
+	private String nome;
+	private String cpf;
+	private String tipo;
+	private String senha;
+	private double salario;
 	
 	public Funcionario() {}
 	
-	public Funcionario(String nome, String cpf, double salario) {
+	public Funcionario(String nome, String cpf, String tipo, String senha, double salario) {
+		super();
 		this.nome = nome;
 		this.cpf = cpf;
+		this.tipo = tipo;
+		this.senha = senha;
 		this.salario = salario;
 	}
-	
-	public double getBonificacao() {
-		return this.salario * 0.20;
-	}
-	/**
-	 * @return the nome
-	 */
+
 	public String getNome() {
 		return nome;
 	}
-	/**
-	 * @param nome the nome to set
-	 */
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	/**
-	 * @return the cpf
-	 */
+
 	public String getCpf() {
 		return cpf;
 	}
-	/**
-	 * @param cpf the cpf to set
-	 */
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	/**
-	 * @return the salario
-	 */
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	public double getSalario() {
 		return salario;
 	}
-	/**
-	 * @param salario the salario to set
-	 */
+
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
 
-	@Override
-	public String toString() {
-		return "\n*Funcionario\nnome: " + nome + "\ncpf: " + cpf + "\nsalario: " + salario;
-	}
+	
 	
 }

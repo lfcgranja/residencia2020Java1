@@ -7,8 +7,8 @@ public class Operador extends Funcionario {
 	public Operador() {
 	}
 
-	public Operador(String nome, String cpf, double salario) {
-		super(nome, cpf, salario);
+	public Operador(String nome, String cpf, String tipo, String senha, double salario) {
+		super(nome, cpf, tipo, senha, salario);
 	}
 
 	public double getFundoCaixa() {
@@ -19,10 +19,4 @@ public class Operador extends Funcionario {
 		this.fundoCaixa = fundoCaixa;
 	}
 
-	@Override
-	public String toString() {
-		return "\n*Operador\nfundoCaixa: " + fundoCaixa + "\nnome: " + nome + "\ncpf: " + cpf + "\nsalario: " + salario;
-	}
-
-	
 }

@@ -9,7 +9,7 @@ public class PrincipalTestaEnums {
 	String testaEnum = "PRESIDENTE";
 	
 	//Posso atribuir a uma variável PessoasEnum
-	PessoasEnum presidente = PessoasEnum.PRESIDENTE;
+	PessoasEnum presidente = PessoasEnum.MESTRE;
 	PessoasEnum gerente = PessoasEnum.GERENTE;
 	
 	//Posso usar diretamente a uma comparação dentro de um if
