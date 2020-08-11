@@ -8,6 +8,17 @@ public abstract class DPFuncionario implements Comparable<DPFuncionario>{
 	private double salario;
 	
 	public DPFuncionario() {}
+	
+	
+
+	public DPFuncionario(String nome, String cpf, double salario) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.salario = salario;
+	}
+
+
 
 	public abstract double getPLR();
 	

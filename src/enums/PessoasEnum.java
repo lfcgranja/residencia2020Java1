@@ -4,7 +4,7 @@ public enum PessoasEnum {
 
 	GERENTE, 
 	DIRETOR, 
-	MESTRE, 
+	PRESIDENTE, 
 	CLIENTE;
 	
 }

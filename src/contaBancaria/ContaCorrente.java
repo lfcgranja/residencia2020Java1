@@ -1,34 +1,32 @@
 package contaBancaria;
 
-public class ContaCorrente implements contaTributavel {
+public class ContaCorrente extends ContaTributavel {
 
 	//Atributos
-	private int numero;
-	private String titular;
-	private double saldo;
+
 	private double tarifa;
 	private double limite;
 	static int numeroContas;
 	
 	//Construtores
-	public ContaCorrente() {numeroContas++;}
-	public ContaCorrente(int numero, String titular, double saldo, double tarifa, double limite) {
-		this.numero = numero;
-		this.titular = titular;
-		this.saldo = saldo;
+	public ContaCorrente() {super(); numeroContas++;}
+	
+
+	public ContaCorrente(int numero, String cpf, String tipo, double saldo, double tarifa, double limite) {
+		super(numero, cpf, tipo, saldo);
 		this.tarifa = tarifa;
 		this.limite = limite;
 		numeroContas++;
 	}
-	
+
 	@Override
 	public boolean sacar(double valor) {
-		if (this.saldo < valor + tributo) {
+		if (this.getSaldo() < valor + tributo) {
 			return false;
 		} 
 		else {
-			double novoSaldo = this.saldo - valor - tributo;
-			this.saldo = novoSaldo;
+			double novoSaldo = this.getSaldo() - valor - tributo;
+			this.setSaldo(novoSaldo);
 			return true;
 		}
 	}
@@ -47,39 +45,15 @@ public class ContaCorrente implements contaTributavel {
 	
 	@Override
 	public void depositar(double valor) {
-		this.saldo = this.saldo + valor - tributo;
+		this.setSaldo(this.getSaldo() + valor);
 	}
 	
 	@Override
 	public void depositarDeTransferencia(double valor) {
-		this.saldo = this.saldo + valor;
+		this.setSaldo(this.getSaldo() + valor);
 	}
 
-	//getters e setters
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
-	public String getTitular() {
-		return titular;
-	}
-
-	public void setTitular(String titular) {
-		this.titular = titular;
-	}
-
-	public double getSaldo() {
-		return saldo;
-	}
-
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
-
+	
 	public double getTarifa() {
 		return tarifa;
 	}
@@ -95,11 +69,13 @@ public class ContaCorrente implements contaTributavel {
 	public void setLimite(double limite) {
 		this.limite = limite;
 	}
+
+
 	@Override
 	public String toString() {
-		return "\n*ContaCorrente\nnumero: " + numero + "\ntitular: " + titular + "\nsaldo: " + saldo + "\ntarifa: "
-				+ tarifa + "\nlimite: " + limite;
+		return "\n*ContaCorrente\ntarifa: " + tarifa + "\nlimite: " + limite + "\ngetNumero(): " + getNumero()
+				+ "\ngetCpf(): " + getCpf() + "\ngetSaldo(): " + getSaldo();
 	}
-	
+
 
 }

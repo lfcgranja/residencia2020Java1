@@ -15,25 +15,25 @@ public class PrincipalDate {
 	public static void main(String[] args) throws ParseException {
 
 		//Objeto utilizado para formatar data
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");//Podemos usr outros formatos
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/yyyy");//Podemos usr outros formatos
 
 		
 		
-//		//Date
-//		Date date = new Date();
-//		System.out.println("Date antes de formatar: " + date);
-//		System.out.println("Date depois de formatar: " + simpleDateFormat.format(date));
-//
-//		String stx ="07/11/1978";
-//		Date dataUsuario = simpleDateFormat.parse(stx);
-//		System.out.println("Date digitado e formatado: " + dataUsuario);
-//	
-//		
-//		System.out.println();
+		//Date
+		Date date = new Date();
+		System.out.println("Date antes de formatar: " + date);
+		System.out.println("Date depois de formatar: " + simpleDateFormat.format(date));
+
+		String stx ="07/11/1978";
+		Date dataUsuario = simpleDateFormat.parse(stx);
+		System.out.println("Date digitado e formatado: " + dataUsuario);
+	
+		
+		System.out.println();
 //		
 //		
 //		//GregorianCalendar
-		GregorianCalendar gCalendar = new GregorianCalendar();
+//		GregorianCalendar gCalendar = new GregorianCalendar();
 //		System.out.println("Qual o dia da semana: " + gCalendar.get(Calendar.DAY_OF_WEEK)); //Mostra qual o dia da semana 1 = domingo, 2=segunda, etc
 //		System.out.println("Data do sistema: " + gCalendar.getTime()); 
 //		gCalendar.add(Calendar.MONTH, 2); //Adiciona 2 meses à data atual
@@ -69,21 +69,21 @@ public class PrincipalDate {
         
 
 		
-		Date startDate = simpleDateFormat.parse("07/11/1978");
-		Date endDate = simpleDateFormat.parse("10/08/2020");
-		
-		LocalDate start = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-		LocalDate end = endDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-		int cont = 0;
-		for (LocalDate localDate = start; localDate.isBefore(end); localDate = localDate.plusDays(1)) {
-		    cont = cont+1;
-		}
-
-		gCalendar.setTime(startDate);
-		gCalendar.add(Calendar.DAY_OF_MONTH, cont);
-		System.out.println("Dias contados: " + cont);
-		System.out.println(gCalendar.getTime());
+//		Date startDate = simpleDateFormat.parse("07/11/1978");
+//		Date endDate = simpleDateFormat.parse("10/08/2020");
+//		
+//		LocalDate start = startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//		LocalDate end = endDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//
+//		int cont = 0;
+//		for (LocalDate localDate = start; localDate.isBefore(end); localDate = localDate.plusDays(1)) {
+//		    cont = cont+1;
+//		}
+//
+//		gCalendar.setTime(startDate);
+//		gCalendar.add(Calendar.DAY_OF_MONTH, cont);
+//		System.out.println("Dias contados: " + cont);
+//		System.out.println(gCalendar.getTime());
 	}
 	
 }

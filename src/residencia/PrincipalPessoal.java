@@ -1,20 +1,21 @@
 package residencia;
 
-import contaBancaria.FolhaPagamento;
-import pessoal.Diretor;
-import pessoal.Funcionario;
-import pessoal.Gerente;
+import departamentoPessoal.DPFuncionario;
+import departamentoPessoal.DPGerente;
+import departamentoPessoal.DPRelatorio;
 
 public class PrincipalPessoal {
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
-		Funcionario func = new Gerente("Marcelo", "12345678910", "GERENTE", "123456" , 2000.00, 10);
-		System.out.println(func.toString());
+		DPFuncionario func = new DPGerente("Marcelo", "123", 2000.00);
+		//System.out.println(func.toString());
 		
-		FolhaPagamento folha = new FolhaPagamento();
+//		DPRelatorio relatorio = new DPRelatorio();
+//		relatorio.setTeste(20);
+//		relatorio.preparaFolha();
 		
-		Funcionario funcionario = new Diretor();
-		funcionario.setSalario(5000.0);
-		folha.calcularFolhaPagamento(func);
+		DPRelatorio.setTeste(20);
+		DPRelatorio.preparaFolha();
 	}
 }

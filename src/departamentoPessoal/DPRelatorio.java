@@ -2,7 +2,13 @@ package departamentoPessoal;
 
 public class DPRelatorio {
 
-	public void preparaFolha(){
+	private static int teste = 0;
+	
+	
+	public static int getTeste() {return teste;}
+	public static void setTeste(int t) {teste = t;}
+
+	public static void preparaFolha(){
 	
 			DPDiretor diretor = new DPDiretor();
 			diretor.setNome("Maria Clara");
@@ -23,10 +29,11 @@ public class DPRelatorio {
 			System.out.println(diretor.getNome());
 			System.out.println(diretor2.getNome());
 			System.out.println(DPFuncionario.getCompartilhado());
+			System.out.println("Teste " + teste);
 
 	}
 	
-	public String calculaFolha(DPFuncionario func) {
+	public static String calculaFolha(DPFuncionario func) {
 
 		double somaTudo = func.getSalario() + func.getSalario() * 0.15 + func.getPLR();
 		return "\n Funcionario: " + func.getNome() + "\n CPF: " + func.getCpf() + "\n Salario: " + func.getSalario()

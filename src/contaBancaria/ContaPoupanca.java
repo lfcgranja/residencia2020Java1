@@ -1,30 +1,28 @@
 package contaBancaria;
 
-public class ContaPoupanca implements Conta {
+public class ContaPoupanca extends Conta {
 
-	private int numero;
-	private String titular;
-	private double saldo;
 	private double rendimento;
 
 	public ContaPoupanca() {}
 	
-	public ContaPoupanca(int numero, String titular, double saldo, double rendimento) {
-		super();
-		this.numero = numero;
-		this.titular = titular;
-		this.saldo = saldo;
+
+
+	public ContaPoupanca(int numero, String cpf, String tipo, double saldo, double rendimento) {
+		super(numero, cpf, tipo, saldo);
 		this.rendimento = rendimento;
 	}
 
+
+
 	@Override
 	public boolean sacar(double valor) {
-		if (this.saldo < valor) {
+		if (this.getSaldo() < valor) {
 			return false;
 		} 
 		else {
-			double novoSaldo = this.saldo - valor;
-			this.saldo = novoSaldo;
+			double novoSaldo = this.getSaldo() - valor;
+			this.setSaldo(novoSaldo);
 			return true;
 		}
 	}
@@ -43,37 +41,14 @@ public class ContaPoupanca implements Conta {
 	
 	@Override
 	public void depositar(double valor) {
-		this.saldo = this.saldo + valor;
+		this.setSaldo(this.getSaldo() + valor);
 	}
 	
 	@Override
 	public void depositarDeTransferencia(double valor) {
-		this.saldo = this.saldo + valor;
+		this.setSaldo(this.getSaldo() + valor);
 	}
 	//getters e setters
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
-	public String getTitular() {
-		return titular;
-	}
-
-	public void setTitular(String titular) {
-		this.titular = titular;
-	}
-
-	public double getSaldo() {
-		return saldo;
-	}
-
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
 
 	public double getRendimento() {
 		return rendimento;
@@ -82,5 +57,15 @@ public class ContaPoupanca implements Conta {
 	public void setRendimento(double rendimento) {
 		this.rendimento = rendimento;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "\n*ContaPoupanca\nrendimento: " + rendimento + "\ngetNumero(): " + getNumero() + "\ngetCpf(): "
+				+ getCpf() + "\ngetSaldo(): " + getSaldo();
+	}
+	
+	
 	
 }
